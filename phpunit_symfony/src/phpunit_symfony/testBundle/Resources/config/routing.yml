@@ -1,0 +1,9 @@
+test_homepage:
+    pattern:  /
+    defaults: { _controller: testBundle:Default:index }
+test_ajax:
+    pattern:  /ajax
+    defaults: { _controller: testBundle:Default:ajax }
+    requirements:
+        _method:  POST
+

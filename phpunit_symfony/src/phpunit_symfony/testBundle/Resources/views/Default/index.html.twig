@@ -1,0 +1,38 @@
+
+<html>
+    <body>
+
+    <center>
+        <fieldset>
+            <legend><h1>PHPUnit web tests</h1></legend>
+            <a href="#" id="run">
+                Run tests
+            </a>
+            <div id="output"></div>
+        </fieldset>
+
+
+    </center>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+
+
+            $('#run').click(function() {
+
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ path('test_ajax') }}",
+                    success: function(data) {
+
+                        $('#output').html(data);
+                    }
+                });
+
+            });
+
+        });
+    </script>
+</body>
+</html>
